@@ -1,0 +1,77 @@
+﻿@model HQBase.Models.Comic
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Comic</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ComicId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title)
+                @Html.ValidationMessageFor(model => model.Title)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PublisherId, "Publisher", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("PublisherId", String.Empty)
+                @Html.ValidationMessageFor(model => model.PublisherId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DrawerId, "Drawer", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("DrawerId", String.Empty)
+                @Html.ValidationMessageFor(model => model.DrawerId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WriterId, "Writer", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("WriterId", String.Empty)
+                @Html.ValidationMessageFor(model => model.WriterId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CollectionId, "Collection", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("CollectionId", String.Empty)
+                @Html.ValidationMessageFor(model => model.CollectionId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EditionNum, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EditionNum)
+                @Html.ValidationMessageFor(model => model.EditionNum)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

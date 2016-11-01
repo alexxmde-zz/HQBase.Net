@@ -1,0 +1,66 @@
+﻿@model HQBase.Models.Comic
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Comic</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Collection.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collection.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drawer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drawer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publisher.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publisher.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Writer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Writer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditionNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditionNum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ComicId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
